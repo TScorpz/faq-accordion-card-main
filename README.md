@@ -49,7 +49,7 @@ I've learned to create an accordion.
 
 ### Continued development
 
-In future projects I want to improve my animation with css skills
+In future projects I want to improve my animation with css skills and make so that only one accordion can be opened at a time.
 
 ### Useful resources
 
