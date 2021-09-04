@@ -1,40 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="index.css">
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
   <title>Frontend Mentor | FAQ Accordion Card</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
+
 <body>
-  How many team members can I invite?
-  You can invite up to 2 additional users on the Free plan. There is no limit on 
-  team members for the Premium plan.
 
-  What is the maximum file upload size?
-  No more than 2GB. All files in your account must fit your allotted storage space.
-
-  How do I reset my password?
-  Click “Forgot password” from the login page or “Change password” from your profile page.
-  A reset link will be emailed to you.
-
-  Can I cancel my subscription?
-  Yes! Send us a message and we’ll process your request no questions asked.
-
-  Do you provide additional support?
-  Chat and email support is available 24/7. Phone lines are open during normal business hours.
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <header></header>
+  <main>
+    <div class="main-content">
+      <div class="image-mobile">
+        <img src="/images/bg-pattern-mobile.svg" alt="image shadow" class='illustration-shadow-mobile'>
+        <img src="/images/illustration-woman-online-mobile.svg" alt="woman standing infront of the screen"
+          class='illustration-mobile'>
+      </div>
+      <div class="image-desktop">
+        <div class="img-wrapper">
+          <img src="images/bg-pattern-desktop.svg" alt="image shadow" class='illustration-shadow-desktop'>
+          <img src="images/illustration-woman-online-desktop.svg" alt="woman standing infront of the screen"
+            class='illustration-desktop'>
+        </div>
+        <img src="images/illustration-box-desktop.svg" alt="box picture" class='box-picture' id='box'>
+      </div>
+      <div class="wrapper">
+        <h1>FAQ</h1>
+        <button class="accordion" onmouseover="moveBoxForward()" onmouseleave="moveBoxBack()">How many team members can
+          I invite?</button>
+        <div class="panel">
+          <p>
+            You can invite up to 2 additional users on the Free plan. There is no limit on
+            team members for the Premium plan.
+          </p>
+        </div>
+        <button class="accordion" onmouseover="moveBoxForward()" onmouseleave="moveBoxBack()">What is the maximum file
+          upload size?</button>
+        <div class="panel">
+          <p>No more than 2GB. All files in your account must fit your allotted storage space.</p>
+        </div>
+        <button class="accordion" onmouseover="moveBoxForward()" onmouseleave="moveBoxBack()">How do I reset my
+          password?</button>
+        <div class="panel">
+          <p>
+            Click “Forgot password” from the login page or “Change password” from your profile page.
+            A reset link will be emailed to you.
+          </p>
+        </div>
+        <button class="accordion" onmouseover="moveBoxForward()" onmouseleave="moveBoxBack()">Can I cancel my
+          subscription?</button>
+        <div class="panel">
+          <p>Yes! Send us a message and we’ll process your request no questions asked.</p>
+        </div>
+        <button class="accordion" onmouseover="moveBoxForward()" onmouseleave="moveBoxBack()">Do you provide additional
+          support?</button>
+        <div class="panel">
+          <p>Chat and email support is available 24/7. Phone lines are open during normal business hours.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    Challenge by <a href="https://www.frontendmentor.io/challenges/faq-accordion-card-XlyjD0Oam"
+      target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://www.frontendmentor.io/profile/TScorpz" target="_blank">Jevgenij D</a>.
+  </footer>
 </body>
+
+<script>
+  let acc = document.getElementsByClassName("accordion");
+  let i;
+
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function () {
+      this.classList.toggle("active");
+      let panel = this.nextElementSibling;
+      panel.classList.toggle('expanded');
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+      }
+    });
+  }
+
+  function moveBoxForward() {
+    let box = document.getElementById('box');
+    box.style.animation = 'moveForward 0.2s linear';
+    box.style.transform = 'translate(-6.5rem, -14.5rem)';
+  }
+
+  function moveBoxBack() {
+    let box = document.getElementById('box');
+    box.style.animation = 'moveBackward 0.2s linear';
+    box.style.transform = 'translate(-4.5rem, -14.5rem)';
+  }
+</script>
+
 </html>
