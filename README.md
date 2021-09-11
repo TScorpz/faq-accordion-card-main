@@ -31,7 +31,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Here](https://your-solution-url.com)
+- Solution URL: [Here](https://www.frontendmentor.io/solutions/faq-accordion-with-some-animations-and-gradient-border-o9jcuU6d1)
 - Live Site URL: [Here](https://tscorpz.github.io/faq-accordion-card-main/)
 
 ## My process
